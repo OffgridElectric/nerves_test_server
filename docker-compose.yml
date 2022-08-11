@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  ###
+  ### Postgresql databases
+  ###
+  database:
+    image: postgres:14.4-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nerves_test_server_dev
