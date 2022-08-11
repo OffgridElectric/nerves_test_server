@@ -5,6 +5,8 @@
 # is restricted to this project.
 import Config
 
+config :phoenix, :json_library, Jason
+
 # General application configuration
 config :nerves_test_server,
   ecto_repos: [NervesTestServer.Repo]
@@ -28,7 +30,7 @@ config :ex_aws,
 
 config :circle_ci,
   token: System.get_env("NERVES_CIRCLECI_TOKEN"),
-  json_module: Poison
+  json_module: Jason
 
 config :tentacat,
   token: System.get_env("NERVES_GITHUB_TOKEN")

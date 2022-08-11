@@ -87,12 +87,12 @@ defmodule NervesTestServer.Producers.SQS do
       body =
         message
         |> Map.get(:body)
-        |> Poison.decode!()
+        |> Jason.decode!()
 
       meta =
         body
         |> Map.get("Message")
-        |> Poison.decode!()
+        |> Jason.decode!()
         |> IO.inspect(label: "Meta")
 
       vcs_id = Map.get(meta, "sha")
