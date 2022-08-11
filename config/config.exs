@@ -11,7 +11,7 @@ config :nerves_test_server,
 
 # Configures the endpoint
 config :nerves_test_server, NervesTestServerWeb.Endpoint,
-  url: [host: "169.254.37.89"],
+  url: [host: "simple-app-elixir.herokuapp.com"],
   secret_key_base: "38LtmKGJZBrYawg1qVj6dhQt6yCu2IsMOCy1pFp3XQiGFUBOXSOAUB5lqKeFmzAv",
   render_errors: [view: NervesTestServerWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: NervesTestServer.PubSub, adapter: Phoenix.PubSub.PG2]
