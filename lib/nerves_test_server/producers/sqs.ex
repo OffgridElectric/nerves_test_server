@@ -3,6 +3,10 @@ defmodule NervesTestServer.Producers.SQS do
 
   alias ExAws.SQS
 
+  def child_spec(opts) do
+    %{id: __MODULE__, start: {__MODULE__, :start_link, [opts]}}
+  end
+
   def start_link(opts \\ []) do
     GenStage.start_link(__MODULE__, opts, name: __MODULE__)
   end

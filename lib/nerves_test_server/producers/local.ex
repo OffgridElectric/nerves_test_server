@@ -1,6 +1,10 @@
 defmodule NervesTestServer.Producers.Local do
   use NervesTestServer.Producer
 
+  def child_spec(opts) do
+    %{id: __MODULE__, start: {__MODULE__, :start_link, [opts]}}
+  end
+
   def start_link(opts \\ []) do
     Logger.debug("Start Local Producer")
     GenStage.start_link(__MODULE__, opts, name: __MODULE__)
