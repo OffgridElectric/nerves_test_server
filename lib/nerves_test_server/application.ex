@@ -6,7 +6,7 @@ defmodule NervesTestServer.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
+      {Phoenix.PubSub, [name: NervesTestServer.PubSub]},
       {NervesTestServer.Repo, []},
       {NervesTestServerWeb.Endpoint, []},
       {@producer, [@producer_opts]}

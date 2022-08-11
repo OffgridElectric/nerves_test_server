@@ -38,6 +38,7 @@ config :nerves_test_server, NervesTestServerWeb.Endpoint,
 
 # Watch static and templates for browser reloading.
 config :nerves_test_server, NervesTestServerWeb.Endpoint,
+url: [host: "localhost"],
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
