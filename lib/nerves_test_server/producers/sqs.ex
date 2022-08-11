@@ -7,7 +7,7 @@ defmodule NervesTestServer.Producers.SQS do
     %{id: __MODULE__, start: {__MODULE__, :start_link, [opts]}}
   end
 
-  def start_link(opts \\ []) do
+  def start_link(opts) do
     GenStage.start_link(__MODULE__, opts, name: __MODULE__)
   end
 

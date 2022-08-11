@@ -64,8 +64,13 @@ config :nerves_test_server, NervesTestServer.Repo,
   hostname: "localhost",
   pool_size: 10
 
+# config :nerves_test_server,
+#   producer: NervesTestServer.Producers.Local
+
 config :nerves_test_server,
-  producer: NervesTestServer.Producers.Local
+  producer: NervesTestServer.Producers.SQS
+
+config :nerves_test_server, NervesTestServer.Producers.SQS, queue_name: "nerves-test-server"
 
 config :tentacat,
   enabled: false
