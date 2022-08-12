@@ -21,7 +21,13 @@ config :nerves_test_server, NervesTestServerWeb.Endpoint,
   secret_key_base: System.fetch_env!("SECRET_KEY_BASE")
 
 # Do not print debug messages in production
-config :logger, level: :info
+case System.get_env("DEBUG", "0") do
+  "0" ->
+    config :logger, level: :info
+
+  "1" ->
+    config :logger, level: :debug
+end
 
 config :nerves_test_server, NervesTestServer.Repo,
   adapter: Ecto.Adapters.Postgres,
