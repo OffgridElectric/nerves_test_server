@@ -1,4 +1,4 @@
-use Config
+import Config
 
 config :nerves_test_server, NervesTestServerWeb.Endpoint,
   secret_key_base: System.fetch_env!("SECRET_KEY_BASE")
