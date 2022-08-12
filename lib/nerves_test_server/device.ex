@@ -7,7 +7,7 @@ defmodule NervesTestServer.Device do
   alias NervesTestServerWeb.Endpoint
   alias NervesTestServer.{Repo, Build}
 
-  @repo_org "nerves-project"
+  @repo_org "OffgridElectric"
   # 5 minutes
   @timeout 60_000 * 5
 
