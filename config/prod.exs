@@ -17,22 +17,10 @@ config :nerves_test_server, NervesTestServerWeb.Endpoint,
   load_from_system_env: true,
   url: [scheme: "https", host: "zola-nerves-test.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  cache_static_manifest: "priv/static/cache_manifest.json",
-  secret_key_base: System.fetch_env!("SECRET_KEY_BASE")
-
-# Do not print debug messages in production
-case System.get_env("DEBUG", "0") do
-  "0" ->
-    config :logger, level: :info
-
-  "1" ->
-    config :logger, level: :debug
-end
+  cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :nerves_test_server, NervesTestServer.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.fetch_env!("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
 config :nerves_test_server,
