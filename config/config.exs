@@ -26,7 +26,8 @@ config :logger, :console,
 # Configure AWS access
 config :ex_aws,
   access_key_id: [{:system, "NERVES_AWS_ACCESS_KEY_ID"}, :instance_role],
-  secret_access_key: [{:system, "NERVES_AWS_SECRET_ACCESS_KEY"}, :instance_role]
+  secret_access_key: [{:system, "NERVES_AWS_SECRET_ACCESS_KEY"}, :instance_role],
+  region: "eu-west-1"
 
 config :circle_ci,
   json_module: Jason
