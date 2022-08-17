@@ -28,6 +28,11 @@ defmodule NervesTestServerWeb.DeviceChannel do
     {:ok, socket}
   end
 
+  def join(topic, payload, socket) do
+    Logger.error("TOPIC #{inspect topic} / PAYLOAD: #{inspect payload}")
+    {:ok, socket}
+  end
+
   def handle_in("test_begin", _payload, socket) do
     # TODO: Unlink from the device genserver and set the timers
     device = socket.assigns[:device]
